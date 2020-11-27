@@ -1,0 +1,53 @@
+@mixin ligth {
+  --color-background: #f7f7f7;
+  --color: #555;
+  --color-border: #cacfd5;
+  --color-text-default: #0b1016;
+  --color-base: #f4f5f6;
+  --color-primary: #0060df;
+  --color-primary-light: #3accfb;
+  --color-secondary: #fbfbfe;
+  --color-accent: #fd6f53;
+  --color-accent-strong: #ba0d37;
+  --font-color: #000000;
+  --placeholder-color: #b2b4b6;
+
+  &.night {
+    --color-background: #eee;
+    --color: black;
+  }
+}
+
+@mixin dark {
+  --color-background: #38444c;
+  --color: #ddd;
+  --color-border: #697278;
+  --color-text-default: #f0f2f3;
+  --color-base: #1d313f;
+  --color-primary: #17ed90;
+  --color-primary-light: #9ef3ce;
+  --color-secondary: #2b2a2a;
+  --color-accent: #12cdea;
+  --color-accent-strong: #ec1a62;
+  --font-color: #ffffff;
+  --placeholder-color: #999;
+
+    &.night {
+    --color-background: black;
+    --color: #eee;
+  }
+}
+
+:root {
+  @include ligth();
+
+  .dark {
+    @include dark();
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark();
+  }
+}

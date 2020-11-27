@@ -1,0 +1,19 @@
+{
+  "page_name": "Sing up page",
+  "go_to": "Sing in",
+  "short_page_name": "Sing up",
+  "have_account": "Already have an account? Sing in",
+  "email_address": "Email address *",
+  "first_name": "First Name *",
+  "last_name": "Last Name *",
+  "password": "Password *",
+  "first_name_placeholder": "Marcus",
+  "last_name_placeholder": "Aurelius",
+  "email_placeholder": "my.best@email.com",
+  "password_placeholder": "12345678",
+  "validate_name": "Should include min {{n}} charachters",
+  "validate_required": "This field is required!",
+  "validate_lastname": "Should include min {{n}} charachters",
+  "validate_email": "Should include the correct an email adress!",
+  "validate_password": "Should include min {{n}} characters!"
+}
