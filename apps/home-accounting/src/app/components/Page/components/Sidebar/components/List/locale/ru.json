@@ -1,0 +1,11 @@
+{
+  "dashboard": "Инструменты",
+  "income": "Доход",
+  "expense": "Расходы",
+  "reports": "Отчеты",
+  "integrations": "Интеграция",
+  "saved_reports": "Сохраненные отчеты",
+  "current_month": "Текущий месяц",
+  "last_quarter": "Последний квартал",
+  "year-end_sale": "Годовой доход"
+}

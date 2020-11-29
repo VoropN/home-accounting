@@ -9,7 +9,10 @@ export enum i18nConst {
   fallbackLng = 'en'
 }
 
+export const initLanguage = () => localStorage.getItem(i18nConst.localStorageKey) || i18nConst.fallbackLng;
+
 export enum NameSpace {
   SING_IN = 'SING_IN',
-  SING_UP = 'SING_UP'
+  SING_UP = 'SING_UP',
+  SIDEBAR = 'SIDEBAR',
 }

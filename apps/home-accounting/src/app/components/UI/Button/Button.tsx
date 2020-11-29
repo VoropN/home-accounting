@@ -25,15 +25,15 @@ const BaseButton = styled.button`
   display: block;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid var(--color-primary-light);
-  background: var(--color-primary-light);
+  border: 1px solid var(--palette-secondary-main);
+  background-color: var(--palette-secondary-light);
   padding: 10px 5px;
-  color: var(--color-secondary);
+  color: var(--palette-primary-light);
   text-transform: uppercase;
   font-weight: 400;
 
   &:hover {
-    filter: hue-rotate(35deg);
+    background-color: var(--palette-secondary-main);
   }
 `;
 

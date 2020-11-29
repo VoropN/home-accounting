@@ -1,14 +1,14 @@
-import i18n, { Module } from "i18next";
-import detector from "i18next-browser-languagedetector";
-import { reactI18nextModule } from "react-i18next";
+import i18n from "i18next";
+import LanguageDetector  from "i18next-browser-languagedetector";
+import { initReactI18next } from 'react-i18next';
 import { i18nConst } from './constants';
 
 i18n
-  .use(detector)
-  .use(reactI18nextModule as Module)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     fallbackLng: i18nConst.fallbackLng,
-    keySeparator: false,
+    keySeparator: '.',
     interpolation: {
       escapeValue: false
     }

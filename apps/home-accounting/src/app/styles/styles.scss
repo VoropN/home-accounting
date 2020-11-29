@@ -1,10 +1,9 @@
-@import './them.scss';
-@import './colors.scss';
+@import './themes/theme.scss';
 @import './reset.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--palette-primary-light);
   font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
   margin: 0 auto;
@@ -13,4 +12,5 @@ body {
 
 #root {
   height: 100%;
+  width: 100%;
 }

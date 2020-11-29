@@ -1,6 +1,7 @@
 import { NameSpace } from '@app/i18n';
 import withLoadNameSpace from '@app/i18n/withLoadNameSpace';
-import React from 'react';
+import { changePageName } from '@app/redux/pageData/actions';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as LoginIcon } from '../../../assets/login.svg';
 import Button from '../../components/UI/Button';
@@ -10,8 +11,15 @@ import Input from '../../components/UI/Input';
 import Title from '../../components/UI/Title';
 import { Path } from '../../navigation/constants';
 import lngs from './locale';
+import { useDispatch } from 'react-redux';
 
-export const SingUp = ({t}) => {
+export const SingUp = ({ t }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(changePageName(t('page_name')));
+  }, [dispatch, t]);
+
   return (
     <Form>
       <Title>
@@ -36,7 +44,7 @@ export const SingUp = ({t}) => {
 };
 
 const CustomLoginIcon = styled(LoginIcon)`
-  fill: var(--color-primary-light);
+  fill: var(--palette-secondary-light);
   margin-right: 10px;
 `;
 

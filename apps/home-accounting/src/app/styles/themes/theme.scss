@@ -1,0 +1,17 @@
+@import './light.scss';
+@import './dark.scss';
+
+:root {
+  @include ligth();
+
+  .dark {
+    @include dark();
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark();
+  }
+}
+

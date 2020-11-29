@@ -10,11 +10,11 @@ const StyledLink = styled(Link)`
   font-size: 0.8em;
   text-align: right;
   margin-top: 5px;
-  color: var(--color-primary-light);
+  color: var(--palette-secondary-main);
 
   &:hover {
     text-decoration: underline;
-    filter: hue-rotate(35deg);
+    color: var(--palette-secondary-light);
   }
 `;
 
