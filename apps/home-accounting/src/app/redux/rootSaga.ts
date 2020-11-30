@@ -1,3 +1,6 @@
+import { all } from 'redux-saga/effects';
+import loginPageWatherSaga from './page/saga';
+
 export function* rootSaga() {
-  console.log('load saga');
+  yield all([loginPageWatherSaga]);
 }

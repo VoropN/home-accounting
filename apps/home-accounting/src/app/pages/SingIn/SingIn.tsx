@@ -9,17 +9,9 @@ import Title from '../../components/UI/Title';
 import { Path } from '../../navigation/constants';
 import { NameSpace } from '@app/i18n';
 import lngs from './locale';
-import withLoadNameSpace from '@app/i18n/withLoadNameSpace';
-import { useDispatch } from 'react-redux';
-import { changePageName } from '@app/redux/pageData/actions';
+import { withPageName } from '@app/i18n/withPageName';
 
 export const SingIn = ({ t }) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(changePageName(t('page_name')));
-  }, [dispatch, t]);
-
   return (
     <Form>
       <Title>
@@ -39,4 +31,4 @@ const CustomLoginIcon = styled(LoginIcon)`
   margin-right: 10px;
 `;
 
-export default withLoadNameSpace(NameSpace.SING_IN, lngs)(SingIn);
+export default withPageName(NameSpace.SING_IN, lngs, SingIn);

@@ -23,7 +23,7 @@ const Container = styled.aside`
   min-width: 60px;
   overflow: hidden;
   transition: 0.3s all;
-  color: var(--palette-text-light);
+  color: var(--palette-primary-dark);
   background-color: var(--palette-secondary-light);
   border-right: 1px solid var(--palette-primary-main);
 
@@ -32,6 +32,10 @@ const Container = styled.aside`
     min-width: max-content;
     flex: 0, 0, auto;
     flex-shrink: 0;
+  }
+
+  .link {
+    color: var(--palette-primary-dark);
   }
 
   &.open {

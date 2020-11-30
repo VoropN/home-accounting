@@ -15,4 +15,5 @@ export enum NameSpace {
   SING_IN = 'SING_IN',
   SING_UP = 'SING_UP',
   SIDEBAR = 'SIDEBAR',
+  HOME = 'HOME',
 }

@@ -9,7 +9,6 @@ const CustomTilte = styled.h3`
   display: flex;
   justify-content: center;
   margin: 5px 25px 0 0;
-  color: var(--palette-text-primary);
   font-weight: 400;
 `;
 

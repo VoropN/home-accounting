@@ -1,17 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sidebar from '../Sidebar';
-import List from '../Sidebar/components/List';
+import SidebarList from '../Sidebar/components/List';
 
 const Main = ({ isSidebarOpen, children }) => {
   return (
     <Container>
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        className="main-sidebar"
-      >
-        <List.MainListItems />
-        <List.SecondaryListItems />
+      <Sidebar isSidebarOpen={isSidebarOpen} className="main-sidebar">
+        <SidebarList />
       </Sidebar>
       <Body>{children}</Body>
     </Container>
@@ -36,11 +32,14 @@ const Body = styled.div`
   overflow: auto;
   height: 100%;
 
+  --thumbBG: var(--palette-secondary-light);
+  --scrollbarBG: var(--palette-primary-main);
+
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 
   ::-webkit-scrollbar {
-    width: 1.4em;
+    width: 0.7em;
 
     &-track {
       background: var(--scrollbarBG);
@@ -48,8 +47,8 @@ const Body = styled.div`
 
     &-thumb {
       background-color: var(--thumbBG);
-      border-radius: 25px;
-      border: 0.57em dashed var(--scrollbarBG);
+      border-radius: 10px;
+      border: 0.1em solid var(--scrollbarBG);
     }
   }
 `;

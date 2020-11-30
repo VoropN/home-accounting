@@ -8,9 +8,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpen from '@material-ui/icons/MenuOpen';
 import Language from '../Language';
 import Title from '@app/components/UI/Title';
+import UserMenu from './components';
 
 const Header = ({ isSidebarOpen, toggleSidebar }) => {
-  const { pageName } = useSelector((store) => store.pageData);
+  const { name: pageName } = useSelector((store) => store.page);
 
   return (
     <Container>
@@ -22,7 +23,11 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
       </Sidebar>
       <HeaderMenu>
         <IconButton
-          className={cx({ 'sidebar-hidden': !isSidebarOpen }, 'menu-icon')}
+          className={cx(
+            { 'sidebar-hidden': !isSidebarOpen },
+            'menu-icon',
+            'inherit-color'
+          )}
           onClick={() => toggleSidebar(!isSidebarOpen)}
         >
           <MenuIcon className="book" />
@@ -30,6 +35,7 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
         </IconButton>
         <PageName>{pageName}</PageName>
         <Language />
+        <UserMenu />
       </HeaderMenu>
     </Container>
   );
@@ -66,9 +72,12 @@ const HeaderMenu = styled.div`
   padding-right: 15px;
   width: 100%;
 
+  .inherit-color {
+    color: var(--palette-text-primary);
+  }
+
   .menu-icon {
     margin: 0 5px;
-    color: var(--palette-text-primary);
     transition: 0.3s;
 
     .drawer {

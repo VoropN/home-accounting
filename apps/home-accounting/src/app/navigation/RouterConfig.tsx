@@ -1,23 +1,20 @@
 import React from 'react';
+import Page from '@app/components/Page';
 import {
-  BrowserRouter as Router,
-  Redirect,
   Route,
   Switch,
 } from 'react-router-dom';
-import SingIn from '../pages/SingIn';
-import SingUp from '../pages/SingUp';
+import Home from '../pages/Home';
 import { Path } from './constants';
 
 const RouterConfig = () => {
   return (
-    <Router>
+    <Page>
       <Switch>
-        <Route path={Path.SING_IN} component={SingIn} />
-        <Route path={Path.SING_UP} component={SingUp} />
+        <Route path={Path.HOME} component={Home} />
         <Route render={() => <h2>Page not found!</h2>} />
       </Switch>
-    </Router>
+    </Page>
   );
 };
 

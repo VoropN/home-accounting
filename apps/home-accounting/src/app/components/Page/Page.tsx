@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
+import { withAuth } from './hoc';
 
 const Page = ({ children }) => {
   const [isSidebarOpen, toggleSidebar] = useState(false);
@@ -29,4 +30,5 @@ const Container = styled.div`
   grid-template-rows: 65px 1fr 30px;
 `;
 
-export default Page;
+export { Page };
+export default withAuth(Page);

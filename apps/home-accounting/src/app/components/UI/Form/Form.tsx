@@ -14,7 +14,8 @@ const BaseForm = styled.form`
   max-width: 300px;
   border-radius: 5px;
   background-color: var(--palette-primary-dark);
-  box-shadow: var(--shadows-3);
+  box-shadow: var(--shadow-3);
+  color: var(--palette-text-primary);
 
   > * {
     width: 100%;
