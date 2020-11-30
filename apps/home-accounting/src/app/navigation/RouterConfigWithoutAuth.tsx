@@ -7,7 +7,7 @@ import {
 import SingIn from '../pages/SingIn';
 import SingUp from '../pages/SingUp';
 import { Path } from './constants';
-import { Page as PageWithoutAuth } from '@app/components/Page';
+import PageWithoutAuth from '@app/components/Page';
 
 const RouterConfigWithoutAuth = () => {
   return (
@@ -15,7 +15,7 @@ const RouterConfigWithoutAuth = () => {
       <Switch>
         <Route path={Path.SING_IN} component={SingIn} />
         <Route path={Path.SING_UP} component={SingUp} />
-        <Redirect to={Path.SING_IN}/>
+        <Route render={() => <Redirect to={Path.SING_IN} />} />
       </Switch>
     </PageWithoutAuth>
   );

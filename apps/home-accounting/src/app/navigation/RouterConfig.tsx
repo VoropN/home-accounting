@@ -11,8 +11,8 @@ const RouterConfig = () => {
   return (
     <Page>
       <Switch>
-        <Route path={Path.HOME} component={Home} />
-        <Route render={() => <h2>Page not found!</h2>} />
+          <Route exact path={Path.HOME} component={Home} />
+          <Route render={() => <h2>Page not found!</h2>} />
       </Switch>
     </Page>
   );
