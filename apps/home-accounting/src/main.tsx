@@ -4,12 +4,15 @@ import ReactDOM from 'react-dom';
 import App from './app/app';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+import ThemeProvider from '@app/components/Page/components/Theme';
 
 ReactDOM.render(
   <Provider store={store}>
     <Suspense fallback="...loading">
       <Router>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </Router>
     </Suspense>
   </Provider>,

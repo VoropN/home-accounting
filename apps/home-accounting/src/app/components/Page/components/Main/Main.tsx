@@ -31,6 +31,7 @@ const Body = styled.div`
   flex-grow: 1;
   overflow: auto;
   height: 100%;
+  background-color: var(--palette-primary-light);
 
   --thumbBG: var(--palette-secondary-light);
   --scrollbarBG: var(--palette-primary-main);
@@ -40,6 +41,7 @@ const Body = styled.div`
 
   ::-webkit-scrollbar {
     width: 0.7em;
+    cursor: pointer;
 
     &-track {
       background: var(--scrollbarBG);
@@ -49,6 +51,14 @@ const Body = styled.div`
       background-color: var(--thumbBG);
       border-radius: 10px;
       border: 0.1em solid var(--scrollbarBG);
+
+      &:hover {
+        background-color: var(--palette-secondary-main);
+      }
+
+      &:active {
+        background-color: var(--palette-secondary-dark);
+      }
     }
   }
 `;

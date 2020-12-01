@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
+import ThemeProvider, { ThemeContext } from './components/Theme';
 
 const Page = ({ children }) => {
   const [isSidebarOpen, toggleSidebar] = useState(false);
+  const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <Container>
+    <Container className={isDarkMode ? 'dark' : 'light'}>
       <Header {...{ isSidebarOpen, toggleSidebar }} />
       <Main {...{ isSidebarOpen }}>{children}</Main>
       <Footer />

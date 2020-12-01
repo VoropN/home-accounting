@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import styled from 'styled-components';
@@ -9,9 +9,12 @@ import MenuOpen from '@material-ui/icons/MenuOpen';
 import Language from '../Language';
 import Title from '@app/components/UI/Title';
 import UserMenu from './components';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { ThemeContext } from '../Theme';
 
 const Header = ({ isSidebarOpen, toggleSidebar }) => {
   const { name: pageName } = useSelector((store) => store.page);
+  const { toggleTheme, isDarkMode } = useContext(ThemeContext);
 
   return (
     <Container>
@@ -36,6 +39,7 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
         <PageName>{pageName}</PageName>
         <Language />
         <UserMenu />
+        <StyledDarkModeSwitch checked={isDarkMode} onChange={toggleTheme} size={30} />
       </HeaderMenu>
     </Container>
   );
@@ -105,6 +109,15 @@ const HeaderMenu = styled.div`
 const PageName = styled.h3`
   flex-grow: 1;
   font-weight: 400;
+`;
+
+const StyledDarkModeSwitch = styled(DarkModeSwitch)`
+  margin: 8px -8px 28px 6px;
+  color: var(--palette-secondary-light);
+
+  > circle {
+    fill: var(--palette-secondary-main);
+  }
 `;
 
 export default Header;
