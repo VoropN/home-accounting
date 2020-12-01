@@ -15,7 +15,6 @@ const UserMenu = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
-
   };
 
   const handleLogout = () => {

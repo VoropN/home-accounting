@@ -1,11 +1,11 @@
-import { USER_LOGIN, USER_LOGOUT } from './constants';
+import { LOGIN_USER_SUCCESS, LOGOUT_USER } from './constants';
 
 const initialState = {
   name: null,
-  token: true,
-}
+  token: null,
+};
 
 export const user = (state = initialState, action) => ({
-  [USER_LOGIN]: () => ({ ...state, ...action }),
-  [USER_LOGOUT]: () => ({ ...state, ...initialState, token: null }),
+  [LOGIN_USER_SUCCESS]: () => ({ ...state, ...action.payload }),
+  [LOGOUT_USER]: () => ({ ...state, ...initialState }),
 })[action.type]?.() || state;

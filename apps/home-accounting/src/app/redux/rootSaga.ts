@@ -1,6 +1,10 @@
 import { all } from 'redux-saga/effects';
-import loginPageWatherSaga from './page/saga';
+import { loginWatherSaga } from './user';
+import { userRightsWatherSaga} from './rights';
 
 export function* rootSaga() {
-  yield all([loginPageWatherSaga]);
+  yield all([
+    loginWatherSaga(),
+    userRightsWatherSaga()
+  ]);
 }

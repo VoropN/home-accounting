@@ -5,14 +5,15 @@ const Button = ({
   type = 'button',
   title = '',
   children = null,
-  ...rest
+  ...restProps
 }: {
   type?: 'button' | 'submit' | 'reset';
   title?: string;
   children?: React.ReactNode | string;
+  [key: string]: any;
 }) => {
   return (
-    <BaseButton type={type} {...rest}>
+    <BaseButton type={type} {...restProps}>
       {title}
       {children}
     </BaseButton>

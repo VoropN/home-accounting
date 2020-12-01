@@ -1,4 +1,5 @@
 export enum Prefix {
   PAGE = 'PAGE',
-  USER = 'USER'
+  USER = 'USER',
+  RIGHTS = 'RIGHTS',
 }
