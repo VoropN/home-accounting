@@ -1,7 +1,7 @@
 import { FETCH_USER_RIGHTS_SUCCESS } from './constants';
 
 const initialState = {
-  type: null, showSidebar: null, showLanguages: null
+  showSidebar: null, showLanguages: null, showMenu: null, showLanguage: null, showUserMenu: null, showModeSwither: null
 };
 
 export const rights = (state = initialState, action) => ({

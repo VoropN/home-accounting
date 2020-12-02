@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 const ThemeProvider = ({ children }) => {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
-import ThemeProvider, { ThemeContext } from './components/Theme';
+import { ThemeContext } from './components/Theme';
 
 const Page = ({ children }) => {
   const [isSidebarOpen, toggleSidebar] = useState(false);

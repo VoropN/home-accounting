@@ -2,13 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import Sidebar from '../Sidebar';
 import SidebarList from '../Sidebar/components/List';
+import { useSelector } from 'react-redux';
 
 const Main = ({ isSidebarOpen, children }) => {
+  const rights = useSelector((store) => store.rights);
+
   return (
     <Container>
-      <Sidebar isSidebarOpen={isSidebarOpen} className="main-sidebar">
+      {rights.showSidebar && <Sidebar isSidebarOpen={isSidebarOpen} className="main-sidebar">
         <SidebarList />
-      </Sidebar>
+      </Sidebar>}
       <Body>{children}</Body>
     </Container>
   );

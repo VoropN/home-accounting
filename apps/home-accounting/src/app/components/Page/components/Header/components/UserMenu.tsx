@@ -4,6 +4,7 @@ import UserIcon from '@material-ui/icons/AccountCircle';
 import { IconButton } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { logout } from '@app/redux/user';
+import { fetchRights } from '@app/redux/rights';
 
 const UserMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -20,6 +21,7 @@ const UserMenu = () => {
   const handleLogout = () => {
     handleClose();
     dispatch(logout());
+    dispatch(fetchRights());
   }
 
   return (

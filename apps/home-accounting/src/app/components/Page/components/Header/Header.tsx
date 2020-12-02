@@ -14,32 +14,43 @@ import { ThemeContext } from '../Theme';
 
 const Header = ({ isSidebarOpen, toggleSidebar }) => {
   const { name: pageName } = useSelector((store) => store.page);
+  const rights = useSelector((store) => store.rights);
   const { toggleTheme, isDarkMode } = useContext(ThemeContext);
 
   return (
     <Container>
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        className={cx({ hide: !isSidebarOpen }, 'sidebar')}
-      >
-        <Title className="sidebar-text">Menu</Title>
-      </Sidebar>
-      <HeaderMenu>
-        <IconButton
-          className={cx(
-            { 'sidebar-hidden': !isSidebarOpen },
-            'menu-icon',
-            'inherit-color'
-          )}
-          onClick={() => toggleSidebar(!isSidebarOpen)}
+      {rights.showSidebar && (
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          className={cx({ hide: !isSidebarOpen }, 'sidebar')}
         >
-          <MenuIcon className="book" />
-          <MenuOpen className="drawer" />
-        </IconButton>
-        <PageName>{pageName}</PageName>
-        <Language />
-        <UserMenu />
-        <StyledDarkModeSwitch checked={isDarkMode} onChange={toggleTheme} size={30} />
+          <Title className="sidebar-text">Menu</Title>
+        </Sidebar>
+      )}
+      <HeaderMenu>
+        {rights.showMenu && (
+          <IconButton
+            className={cx(
+              { 'sidebar-hidden': !isSidebarOpen },
+              'menu-icon',
+              'inherit-color'
+            )}
+            onClick={() => toggleSidebar(!isSidebarOpen)}
+          >
+            <MenuIcon className="book" />
+            <MenuOpen className="drawer" />
+          </IconButton>
+        )}
+        <PageName className={cx({ 'page-with-menu': rights.showMenu })}>
+          {pageName}
+        </PageName>
+        {rights.showLanguage && <Language />}
+        {rights.showUserMenu && <UserMenu />}
+        {rights.showModeSwither && <StyledDarkModeSwitch
+          checked={isDarkMode}
+          onChange={toggleTheme}
+          size={30}
+        />}
       </HeaderMenu>
     </Container>
   );
@@ -109,6 +120,11 @@ const HeaderMenu = styled.div`
 const PageName = styled.h3`
   flex-grow: 1;
   font-weight: 400;
+  padding-left: 25px;
+
+  &.page-with-menu {
+    padding-left: 0;
+  }
 `;
 
 const StyledDarkModeSwitch = styled(DarkModeSwitch)`
