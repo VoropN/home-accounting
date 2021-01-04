@@ -1,0 +1,14 @@
+@import './light.scss';
+@import './dark.scss';
+
+:root {
+  @include ligth();
+
+  .light{
+    @include ligth();
+  }
+
+  .dark {
+    @include dark();
+  }
+}

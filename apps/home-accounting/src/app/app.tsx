@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Message } from '@home-accounting/api-interfaces';
+import './styles/styles.scss';
+import { useSelector } from 'react-redux';
+import RouterConfig from './navigation/RouterConfig';
+import RouterConfigWithoutAuth from './navigation/RouterConfigWithoutAuth';
+import { useDispatch } from 'react-redux';
+import { fetchRights } from '@app/redux/rights';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+  const { token } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
+    dispatch(fetchRights());
+  }, [dispatch]);
 
-  return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to home-accounting!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-        />
-      </div>
-      <div>{m.message}</div>
-    </>
-  );
+  if (!token) {
+    return <RouterConfigWithoutAuth />
+  }
+
+  return <RouterConfig />;
 };
 
 export default App;

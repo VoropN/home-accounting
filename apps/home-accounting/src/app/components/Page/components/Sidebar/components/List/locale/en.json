@@ -1,0 +1,11 @@
+{
+  "dashboard": "Dashboard",
+  "income": "Income",
+  "expense": "Expense",
+  "reports": "Reports",
+  "integrations": "Integrations",
+  "saved_reports": "Saved reports",
+  "current_month": "Current month",
+  "last_quarter": "Last quarter",
+  "year-end_sale": "Year-end sale"
+}

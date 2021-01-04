@@ -1,0 +1,15 @@
+{
+  "page_name": "Sing in page",
+  "go_to": "Sing up",
+  "short_page_name": "Sing in",
+  "forgot_password": "Forgot password?",
+  "no_account": "Don't have an account? Sign Up",
+  "remember_me": "Remember me",
+  "email_address": "Email address *",
+  "email_placeholder": "my.best@email.com",
+  "password_placeholder": "12345678",
+  "password": "Password *",
+  "validate_required": "This field is required!",
+  "validate_email": "Invalid an email adress!",
+  "validate_password": "Should include min {{n}} characters!"
+}
